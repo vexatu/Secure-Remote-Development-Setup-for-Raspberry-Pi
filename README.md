@@ -66,7 +66,7 @@ The user will be prompted for a password that was set during the configuration o
 
 The host_username is the username set in the configuration menu for the Rpi.
 
-In order to use the host_ip please check [GetyouripGuide](docs/GetyouripGuide.md).
+In order to use the host_ip please check [GetyouripGuide](docs/GetyouripGuide.md) .
 
 _More info can be found by accesing the officila documentation: https://wiki.debian.org/SSH._
 
