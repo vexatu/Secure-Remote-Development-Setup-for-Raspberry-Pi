@@ -13,8 +13,10 @@ After you configure your OS image and you have the SSH active, you set up your S
   3. Run the command: `Start-Service ssh-agent`, used to start the ssh service.
    
   4. If you try to ssh now into the RaspberryPi and you get an error that is because you didn't enabled the service status, run this command:`Set-Service -Name ssh-agent -StartupType 'Automatic'`
+
+  5. Verify service status: `Get-Service ssh-agent`.
    
-  5. Then you can finally ssh into the Rpi using the command: `ssh hostusername@raspberrypi.local`, you will be promted for a password that you set when configured the SD card.
+  6. Then you can finally ssh into the Rpi using the command: `ssh hostusername@raspberrypi.local`, you will be promted for a password that you set when configured the SD card.
 
 ### How to reveal your dynamic IP address
 
