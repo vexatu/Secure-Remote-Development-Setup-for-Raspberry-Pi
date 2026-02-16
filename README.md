@@ -12,7 +12,7 @@ The main (client) machine is a Windows PC.
 
 SSH connections are initiated from WSL (Windows Subsystem for Linux) running on the Windows machine.
 
-For learning purposes, I installed Windows Subsystem for Linux (WSL), Debian distro, on my Windows machine in order to use a Linux environment and run native Linux commands.
+For learning purposes, I installed Windows Subsystem for Linux (WSL), Debian distro, on my Windows machine in order to use a Linux environment and run native Linux commands. However, different distro preference,but in the same distro family which is in my case Debian, or using a proper Linux machine also work just fine. 
 
 Although the host operating system is Windows, all SSH commands are executed from within the WSL Linux terminal.
 
@@ -26,7 +26,7 @@ SSH encrypts all communication, protecting against eavesdropping and data interc
 
 To connect to a remote machine via SSH, an internet connection is not strictly required. However, both machines must be connected to the same network or otherwise wouldn't be able to reach each other. This is why configuring a static IP address can be useful, as it ensures the device’s address does not change and remains accessible on the network.
 
-### SSH activation Rpi
+### SSH activation RaspberryPi
 
 SSH can be enabled on a Raspberry Pi when the OS image is first written to the SD card.
 
@@ -34,9 +34,9 @@ SSH can be enabled on a Raspberry Pi when the OS image is first written to the S
 
 ### Best practice
 
-Configure the SSID and the passowrd for your home Wi-Fi inside the configuration menu of the imager, in this way when the Rpi will boot it will connect automatically to your home Wi-Fi and you can start using it headless from the beginning.
+Configure the SSID and the passowrd for your home Wi-Fi inside the configuration menu of the imager, in this way when the RPi will boot it will connect automatically to your home Wi-Fi and you can start using it headless from the beginning.
 
-**Option 2**: Enable SSH by opening Raspberry-Pi configurations menu (For more information visit: https://www.raspberrypi.com/documentation/computers/configuration.html)
+**Option 2**: Enable SSH by opening RaspberryPi configurations menu (For more information visit: https://www.raspberrypi.com/documentation/computers/configuration.html)
 
 Run the command: `sudo raspi-config`
 
@@ -48,13 +48,13 @@ Run the command: `sudo raspi-config`
 
 ### WSL
 
-If it is needed to install Windows Subsystem for Linux can be followed the official documentation:
+If Windows Subsystem for Linux installation is needed, the official documentation can be followed:
 
-https://learn.microsoft.com/en-us/windows/wsl/install
+_https://learn.microsoft.com/en-us/windows/wsl/install_
 
 ### OpenSSH
 
-Once inside the WSL command line interface, in order to SSH into the Rpi it is needed to install openssh-client package using the command
+Once inside the WSL command line interface, in order to SSH into the RPi it is needed to install openssh-client package using the command
 
 `sudo apt install openssh-client`.
 
@@ -68,6 +68,73 @@ The host_username is the username set in the configuration menu for the Rpi.
 
 In order to use the host_ip please check [GetyouripGuide](docs/GetyouripGuide.md) .
 
-_More info can be found by accesing the officila documentation: https://wiki.debian.org/SSH._
+More info can be found by accesing the official documentation: _https://wiki.debian.org/SSH._
+
+## SSH keys
+
+To benefit the most and to properly secure your data for your SSH server generating SSH keys can be a good solution and easier than just promting the user each time.
+
+Always the SSH keys will be generated on the client machine, the one that you want to SSH from.
+
+When generating ssh keys the user will get a private key and a public key. The private key should be kept safe and never shared, as an extra precaution 2FA authentification can be added.
+
+Generating the keys is as simple as running this command:
+
+`ssh-keygen`
+
+After running the command the keys can be saved with a name choosen by the user and they will  be a pair: choosen_name & choosen_name.pub.
+
+### Starting the SSH server
+
+On the remote_host the server will run and the client will try to access it using the keys, in order to do that it is needed to install the openssh-server by running the command:
+
+`sudo apt install openssh-server` 
+
+**!!!Caution of the machine that you are running the command to be the remote_host!!!**
+
+After server installation the ssh connection status can be checked by running the command:
+
+`systemctl status ssh`
+
+Output:
+
+<img width="298" height="28" alt="image" src="https://github.com/user-attachments/assets/8a329b76-2336-4209-bb0e-015f7e762bdb" />
+
+### Configuration of the SSH server
+
+At this moment the server is not configured properly in order to benefit of all the ssh keys features and to do that it is needed to acces the config files of the server.
+
+  1. Installing a text editor that is designed for terminal use like Neovim, this tool helps with editing of the configs files like in this case.
+
+ `sudo apt install neovim` to install the tool.
+
+  2. To acces the server configuration file run:
+
+`sudo nvim /etc/ssh/sshd_config`
+
+Terminal interface should look like this:
+
+<img width="1908" height="965" alt="image" src="https://github.com/user-attachments/assets/8a16e270-b710-4309-8583-6261d149b4a6" />
+
+  3. The following configurations should be modified to no for seecurity reasons, especially the password authentitication because SSH keys will be used from now on.
+
+<img width="541" height="26" alt="image" src="https://github.com/user-attachments/assets/fae9f953-fd6c-41f9-be3b-a36470512e26" />
 
 
+<img width="314" height="20" alt="image" src="https://github.com/user-attachments/assets/93ddedca-9c1c-47c3-9504-23af63a94008" />
+
+### Sharing SSH keys between devices
+
+Now that the server is up and running the public key should be shared to the server.
+
+Inside WSL terminal, where the keys were created, the following command should be used:
+
+`sssh-copy-id -i ~/.ssh/your_key.pub remote_host_username@remote_host_ip`
+
+This command will copy the public key from WSL to the remote machine in the ~/.ssh/authorized_keys.
+
+The system will ask the user to try and log in using the command:
+
+`ssh -i /home/your_username/.ssh/your_key 'remote_host_username@remote_host_ip'` 
+
+**Caution in this case _your_key_ is the private key !**
