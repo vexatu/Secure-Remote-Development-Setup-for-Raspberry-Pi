@@ -139,4 +139,4 @@ The system will ask the user to try and log in using the command:
 
 **Caution in this case _your_key_ is the private key !**
 
-Now the user have acces via SSH using SSH keys, and the user is prompted everytime when the SSH connection takes place for the passphrase choosen when creating the ssh keys.
+Now the user have acces via SSH using SSH keys, and the user is prompted everytime when the SSH connection takes place for the passphrase choosen when creating the keys.
