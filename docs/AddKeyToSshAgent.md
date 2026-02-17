@@ -24,12 +24,6 @@ Inside the client machine the following commands should run:
 
 The user will be promted just once for the passphrase then the SSH connection will be much easier.
 
-**Caution if using WSL as a Linux machine every time the CLI is closed the ssh key stored inside the agent will be deleted. So everytime when you open WSL you should run these commands or you can use Windows OpenSSH.**
+**Caution if using WSL as a Linux machine every time the CLI is closed the ssh key stored inside the agent will be deleted. When a proper Linux machine is used the same thing applyes when you reboot or log out from the machine.**
 
-## Storing the keys in Windows OpenSSH feature
-
-1.Run PowerShell as Administrator.
-
-
-
-That's it.
+That's it now the user should be able to SSH into the remote machine without using the passphrase everytime as long as the same session is running.
