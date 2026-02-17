@@ -153,6 +153,8 @@ For each project, a dedicated Python virtual environment keeps dependencies isol
 
 For a detailed step-by-step guide on creating and activating a Python virtual environment, check out [CreatingVirtualEnvironment](docs/CreatingVirtualEnvironment.md) .
 
+**A practical example of running script can be checked here**
+
 ## Conclusions
 
 This project demonstrates how to securely configure remote development on a Raspberry Pi using SSH and Python virtual environments. By separating responsibilities between the remote host (Raspberry Pi) and the client machine (Windows + WSL Debian), it establishes a clean workflow that mirrors real-world Linux development environments.
