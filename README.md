@@ -1,4 +1,4 @@
-# SSH-into-Raspberry-Pi-Create-a-Python-Virtual-Environment
+# Secure SSH & Python Virtual Environment on Raspberry Pi
 
 SSH setup and Python virtual environment configuration for Raspberry Pi remote development.
 
