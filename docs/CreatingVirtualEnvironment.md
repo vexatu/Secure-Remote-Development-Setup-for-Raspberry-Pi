@@ -20,7 +20,7 @@ This command will install Python inside the Linux machine, in order to install t
 
 `source .venv/bin/activate`
 
-After running the command you can see that (.venv) appeared and now you are inside your venv.
+After running the command you can see that (.venv) appeared and now you are inside your venv. Use this command everytime you want to access your .venv.
 
 <img width="523" height="23" alt="image" src="https://github.com/user-attachments/assets/074a966a-3750-4248-bead-fdc4e279af49" />
 
@@ -32,4 +32,8 @@ After running the command you can see that (.venv) appeared and now you are insi
 
 `./your_script.py`
 
-7. That's it now you have a running virtual environment.
+7. To exit from your .venv simply type:
+
+`deactivate`
+
+9. That's it now you have a running virtual environment.
