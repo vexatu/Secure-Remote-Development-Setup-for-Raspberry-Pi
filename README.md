@@ -142,3 +142,22 @@ The system will ask the user to try and log in using the command:
 Now the user have acces via SSH using SSH keys, and the user is prompted everytime when the SSH connection takes place for the passphrase choosen when creating the keys.
 
 To boost productivity and to get rid of the repeated passphrase input the following document can be checked [AddKeyToSshAgent](docs/AddKeyToSshAgent.md) .
+
+## Virtual Environment Setup
+
+For each project, a dedicated Python virtual environment keeps dependencies isolated from the system Python. This avoids conflicts between projects, allows installation without sudo, and makes the project portable and easy to manage. On Raspberry Pi, this approach is safer and cleaner than installing packages system-wide from my experience.
+
+For a detailed step-by-step guide on creating and activating a Python virtual environment, check out 
+
+
+
+
+
+
+
+
+
+
+
+
+
