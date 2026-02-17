@@ -129,7 +129,7 @@ Now that the server is up and running the public key should be shared to the ser
 
 Inside WSL terminal, where the keys were created, the following command should be used:
 
-`sssh-copy-id -i ~/.ssh/your_key.pub remote_host_username@remote_host_ip`
+`ssh-copy-id -i ~/.ssh/your_key.pub remote_host_username@remote_host_ip`
 
 This command will copy the public key from WSL to the remote machine in the ~/.ssh/authorized_keys.
 
