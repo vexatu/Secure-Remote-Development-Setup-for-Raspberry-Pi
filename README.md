@@ -123,6 +123,10 @@ Terminal interface should look like this:
 
 <img width="314" height="20" alt="image" src="https://github.com/user-attachments/assets/93ddedca-9c1c-47c3-9504-23af63a94008" />
 
+
+Disabling root login improves security by blocking direct SSH access to the most privileged account and reducing exposure to brute-force attacks.
+
+
 ### Sharing SSH keys between devices
 
 Now that the server is up and running the public key should be shared to the server.
