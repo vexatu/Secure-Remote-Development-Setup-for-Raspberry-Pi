@@ -12,7 +12,7 @@ The main (client) machine is a Windows PC.
 
 SSH connections are initiated from WSL (Windows Subsystem for Linux) running on the Windows machine.
 
-For learning purposes, I installed Windows Subsystem for Linux (WSL), Debian distro, on my Windows machine in order to use a Linux environment and run native Linux commands. However, different distro preference,but in the same distro family which is in my case Debian, or using a proper Linux machine also work just fine. 
+For learning purposes, I installed Windows Subsystem for Linux (WSL), Debian distro, on my Windows machine in order to use a Linux environment and run native Linux commands. However, a different distro preference can be slected, but in the same distro family which is in my case Debian, or using a proper Linux machine also work just fine. 
 
 Although the host operating system is Windows, all SSH commands are executed from within the WSL Linux terminal.
 
