@@ -126,6 +126,8 @@ Terminal interface should look like this:
 
 Disabling root login improves security by blocking direct SSH access to the most privileged account and reducing exposure to brute-force attacks.
 
+For a better SSH connection and to not have surprises along the way can be set a static IP address by following [StaticIP](docs/StaticIP)
+
 
 ### Sharing SSH keys between devices
 
