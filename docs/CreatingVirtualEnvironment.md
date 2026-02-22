@@ -10,7 +10,7 @@ This command will install Python inside the Linux machine, in order to install t
 
 2. Creat a directory for your python venv and change your directory to it:
 
-`mkdir python_venv && cd python venv`
+`mkdir python_venv && cd python_venv`
 
 3. Declaring your directory as your python venv, in this way your machine will now that in this folder will be executed python scripts but also that will be installed python dependecies (packages):
 
