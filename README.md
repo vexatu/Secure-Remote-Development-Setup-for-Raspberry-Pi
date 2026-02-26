@@ -116,7 +116,7 @@ Terminal interface should look like this:
 
 <img width="1908" height="965" alt="image" src="https://github.com/user-attachments/assets/8a16e270-b710-4309-8583-6261d149b4a6" />
 
-  3. The following configurations should be modified to no for seecurity reasons, especially the password authentitication because SSH keys will be used from now on.
+  3. The following configurations should be modified to "no" for security reasons, especially the password authentitication because SSH keys will be used from now on.
 
 <img width="541" height="26" alt="image" src="https://github.com/user-attachments/assets/fae9f953-fd6c-41f9-be3b-a36470512e26" />
 
