@@ -54,7 +54,7 @@ _https://learn.microsoft.com/en-us/windows/wsl/install_
 
 ### OpenSSH
 
-Once inside the WSL command line interface, in order to SSH into the RPi it is needed to install openssh-client package using the command
+Once inside the WSL command line interface, in order to SSH into the RPi it is needed to install openssh-client package using the command:
 
 `sudo apt install openssh-client`.
 
@@ -126,7 +126,7 @@ Terminal interface should look like this:
 
 Disabling root login improves security by blocking direct SSH access to the most privileged account and reducing exposure to brute-force attacks.
 
-For a better SSH connection and to not have surprises along the way can be set a static IP address by following [StaticIP](docs/StaticIP)
+For a better SSH connection and to not have surprises along the way can be set a static IP address by following [StaticIP](docs/StaticIP) .
 
 
 ### Sharing SSH keys between devices
@@ -169,7 +169,7 @@ Running SSH from WSL provides a real Linux experience on Windows, making the set
 
 Finally, using a dedicated Python virtual environment for each project ensures dependency isolation, avoids system-wide conflicts, and keeps the Raspberry Pi stable and maintainable.
 
-Overall, this setup provides a secure, scalable, and reproducible foundation for Raspberry Pi remote development.
+Overall, this setup provides a secure and scalable foundation for Raspberry Pi remote development.
 
 
 
